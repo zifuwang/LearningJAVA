@@ -37,6 +37,7 @@ public class JavaFxFour_ extends Application {
 		StackPane layout1 = new StackPane();
 		layout1.getChildren().add(button);
 		Scene scene1 = new Scene(layout1, 300, 250);
+		
 		window.setScene(scene1);
 		window.show();
 	}

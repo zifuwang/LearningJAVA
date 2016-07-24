@@ -28,9 +28,12 @@ public class AlertBox {
 		VBox layout1 = new VBox(10);
 		layout1.getChildren().addAll(label1, closeButton);
 		layout1.setAlignment(Pos.CENTER);
-		
+
+		//GIT comparison testing
 		Scene scene = new Scene(layout1);
 		window.setScene(scene);
 		window.showAndWait();
+		
+		
 		}
 	}

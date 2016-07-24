@@ -21,25 +21,21 @@ public class JavaFxFour_ extends Application {
 	
 	public static void main(String[] args){
 		launch(args);
-	}
-	
+		}
 	@Override 
 	public void start(Stage primaryStage){
-		window = primaryStage;
-		window.setTitle("Title");
+	window = primaryStage;
+	window.setTitle("Title");
 	
-		button = new Button("Click me");
-		button.setOnAction(e -> {
-			boolean result = ComfirmBox.display("Are you sure?", "Yes?");
-			System.out.println(result);
-		});
-		
-		StackPane layout1 = new StackPane();
-		layout1.getChildren().add(button);
-		Scene scene1 = new Scene(layout1, 300, 250);
-		window.setScene(scene1);
-		window.show();
+	button = new Button("Click me");
+	button.setOnAction(e -> {
+	boolean result = ComfirmBox.display("Are you sure?", "Yes?");
+	System.out.println(result);
+	});
+	StackPane layout1 = new StackPane();
+	layout1.getChildren().add(button);
+	Scene scene1 = new Scene(layout1, 300, 250);
+	window.setScene(scene1);
+	window.show();
+		}
 	}
-}
-
-

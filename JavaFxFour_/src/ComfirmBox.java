@@ -48,6 +48,5 @@ public class ComfirmBox {
 		window.showAndWait();
 		
 		return answer;
+		}
 	}
-}
-

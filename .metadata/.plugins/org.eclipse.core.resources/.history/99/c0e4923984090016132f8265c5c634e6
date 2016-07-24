@@ -1,0 +1,9 @@
+import java.util.Random;
+public class GuessNumber {
+	public static void main(String[]args){
+	// create a number through w
+		Random w = new Random();
+		 int f = w.nextInt(100);
+		 System.out.println("Please guess a number from [1-99]");
+	}
+}

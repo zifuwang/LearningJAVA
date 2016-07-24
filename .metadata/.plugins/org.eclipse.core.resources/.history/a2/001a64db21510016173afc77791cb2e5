@@ -1,0 +1,8 @@
+
+public class AlertBox {
+
+	public AlertBox() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,17 @@
+
+public class Fibbonachi1 {
+	public static void main(String[]args) {
+		int fibbonachi = 0;
+		int OtherFibbonachi = 1;
+		int addedFibbonachi = OtherFibbonachi + fibbonachi;
+		while (fibbonachi == fibbonachi) {
+			if(addedFibbonachi % 2 == 0) {
+				System.out.println("" + fibbonachi);
+			}
+			OtherFibbonachi += fibbonachi;
+			fibbonachi += OtherFibbonachi; 
+			{
+		}
+	}
+	}
+}

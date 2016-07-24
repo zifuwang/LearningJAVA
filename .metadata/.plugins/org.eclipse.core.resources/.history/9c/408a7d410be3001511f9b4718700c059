@@ -1,0 +1,10 @@
+
+public class OneSecondProgram{
+	public static void main(String[] args) {
+		 // TODO Auto-generated method stub
+		System.out.println("Hello World");		
+		String day = "3/5/2016";
+		int V = 1;
+	}
+
+}

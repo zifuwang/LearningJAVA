@@ -1,0 +1,11 @@
+
+public class OddtoEven {
+	public static boolean IsEven(int Number) {
+//		if (Number % 2 != 0) {
+		if (Number & 1 != 0) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+}

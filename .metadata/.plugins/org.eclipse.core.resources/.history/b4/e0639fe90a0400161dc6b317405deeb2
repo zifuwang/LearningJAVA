@@ -1,0 +1,19 @@
+
+public class Fibbonachi1 {
+	public static void main(String[]args) {
+		System.out.println("0");
+		int fibbonachi = 0;
+		int OtherFibbonachi = 1;
+		int addedFibbonachi = OtherFibbonachi + fibbonachi;
+		while (addedFibbonachi < 1000) {
+			if(addedFibbonachi % 2 == 0) {
+				System.out.println("" + addedFibbonachi);
+			fibbonachi =+ OtherFibbonachi;
+			}
+			int therFibbonachi = fibbonachi;
+			int addedFibbonachi = OtherFibbonachi;
+			{
+		}
+	}
+	}
+}

@@ -1,0 +1,26 @@
+import java.util.Scanner;
+import java.util.Random;
+public class GuessNumber {
+	public static void main(String[]args){
+		int z = 0;
+	// create a number through w
+		Random w = new Random();
+		 int f = w.nextInt(100);
+		 boolean win = false;
+		 while (!win)
+		 System.out.println("Please guess a number from [1-99]");
+		 Scanner scan = new Scanner(System.in);
+		 int y = scan.nextInt();
+		 z ++;
+		 if(y == f){
+			 System.out.println("You win!"); 
+			 win = true;
+		 }else if (y > f){
+			 System.out.println("Too high!");
+		 }else{
+			 System.out.println("Too low!");
+			  
+		 }
+
+	}
+}

@@ -35,5 +35,6 @@ public class AlertBox {
 		window.showAndWait();
 		
 		
-		}
 	}
+}
+

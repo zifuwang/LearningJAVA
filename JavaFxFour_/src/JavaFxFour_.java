@@ -12,6 +12,11 @@ public class JavaFxFour_ extends Application {
 		launch(args);
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see javafx.application.Application#start(javafx.stage.Stage)
+	 */
 	@Override
 	public void start(Stage primaryStage) {
 		window = primaryStage;

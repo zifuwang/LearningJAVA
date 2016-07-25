@@ -1,10 +1,10 @@
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 public class JavaFxFour_ extends Application {
@@ -19,50 +19,31 @@ public class JavaFxFour_ extends Application {
 		window = primaryStage;
 		window.setTitle("Title");
 
-		HBox topMenu = new HBox();
+		GridPane grid = new GridPane();
+		grid.setPadding(new Insets(10, 10, 10, 10));
+		grid.setHgap(8);
 
-		Button button1 = new Button("File");
-		Button button2 = new Button("Edit");
-		Button button3 = new Button("Source");
+		Label nameLabel = new Label("UserName:");
+		grid.setConstraints(nameLabel, 0, 0);
 
-		topMenu.getChildren().addAll(button1, button2, button3);
+		TextField nameInput = new TextField("User");
+		grid.setConstraints(nameInput, 1, 0);
 
-		VBox leftMenu = new VBox();
+		Label passwordLabel = new Label("Password:");
+		grid.setConstraints(passwordLabel, 0, 1);
 
-		Button button4 = new Button("Refactor");
-		Button button5 = new Button("Navigate");
-		Button button6 = new Button("Search");
+		TextField passwordInput = new TextField();
+		passwordInput.setPromptText("password");
+		grid.setConstraints(passwordInput, 1, 1);
 
-		leftMenu.getChildren().addAll(button4, button5, button6);
+		Button LogInButton = new Button("Log in");
+		grid.setConstraints(LogInButton, 1, 2);
 
-		VBox rightMenu = new VBox();
+		grid.getChildren().addAll(nameLabel, nameInput, passwordLabel, passwordInput, LogInButton);
 
-		Button button7 = new Button("Project");
-		Button button8 = new Button("Git");
-		Button button9 = new Button("Run");
+		Scene scene = new Scene(grid, 300, 200);
 
-		rightMenu.getChildren().addAll(button7, button8, button9);
-
-		HBox bottomMenu = new HBox();
-
-		Button button10 = new Button("JML");
-		Button button11 = new Button("Window");
-		Button button12 = new Button("Help");
-
-		bottomMenu.getChildren().addAll(button10, button11, button12);
-
-		Label centerMenu = new Label("Text");
-
-		BorderPane borderPane = new BorderPane();
-		borderPane.setTop(topMenu);
-		borderPane.setRight(rightMenu);
-		borderPane.setLeft(leftMenu);
-		borderPane.setBottom(bottomMenu);
-		borderPane.setCenter(centerMenu);
-
-		Scene scene1 = new Scene(borderPane, 300, 250);
-
-		window.setScene(scene1);
+		window.setScene(scene);
 		window.show();
 	}
 }

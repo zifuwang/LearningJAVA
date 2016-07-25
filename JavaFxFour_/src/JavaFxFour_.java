@@ -17,33 +17,39 @@ import javafx.scene.Scene;
 
 public class JavaFxFour_ extends Application {
 	Stage window;
-	Button button;
+	Button button1;
 	
-	public static void main(String[] args){
+public static void main(String[] args){
 		launch(args);
 	}
 	
 	@Override 
-	public void start(Stage primaryStage){
-		window = primaryStage;
-		window.setTitle("Title");
+public void start(Stage primaryStage){
+	window = primaryStage;
+	window.setTitle("Title");
+	window.setOnCloseRequest(e -> {
+		e.consume();
+		closeProgram();	
+	});
 	
-		button = new Button("Click me");
-		button.setOnAction(e -> {
-			boolean result = ComfirmBox.display("Are you sure?", "Yes?");
-			System.out.println(result);
-		});
-		
-		StackPane layout1 = new StackPane();
-		layout1.getChildren().add(button);
-		Scene scene1 = new Scene(layout1, 300, 250);
-		
-		window.setScene(scene1);
-		window.show();
+	button1 = new Button("Close new window");
+	button1.setOnAction(e -> closeProgram());
+	
+	StackPane layout1 = new StackPane();
+	layout1.getChildren().add(button1);
+	Scene scene1 = new Scene(layout1, 300, 250);
+	
+	window.setScene(scene1);
+	window.show();
+	}
+
+private void closeProgram(){
+	boolean answer = ComfirmBox.display("Alert!", "Are you sure you want to close this window?");
+	if(answer)
+		window.close();
+	
 	}
 }
-
-
 
 
 

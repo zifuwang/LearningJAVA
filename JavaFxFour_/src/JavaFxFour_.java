@@ -8,6 +8,9 @@ public class JavaFxFour_ extends Application {
 	Stage window;
 	Button button1;
 
+	/*
+	 * 
+	 */
 	public static void main(String[] args) {
 		launch(args);
 	}
@@ -17,6 +20,7 @@ public class JavaFxFour_ extends Application {
 	 * 
 	 * @see javafx.application.Application#start(javafx.stage.Stage)
 	 */
+
 	@Override
 	public void start(Stage primaryStage) {
 		window = primaryStage;

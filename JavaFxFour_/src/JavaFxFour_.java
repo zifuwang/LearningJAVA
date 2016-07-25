@@ -21,7 +21,7 @@ public class JavaFxFour_ extends Application {
 
 		HBox topMenu = new HBox();
 
-		Button button1 = new Button("	File");
+		Button button1 = new Button("File");
 		Button button2 = new Button("Edit");
 		Button button3 = new Button("Source");
 
@@ -45,7 +45,7 @@ public class JavaFxFour_ extends Application {
 
 		HBox bottomMenu = new HBox();
 
-		Button button10 = new Button("	JML");
+		Button button10 = new Button("JML");
 		Button button11 = new Button("Window");
 		Button button12 = new Button("Help");
 

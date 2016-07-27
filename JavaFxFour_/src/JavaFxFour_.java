@@ -19,7 +19,6 @@ public class JavaFxFour_ extends Application {
 	public void start(Stage primaryStage) {
 		window = primaryStage;
 		window.setTitle("Dropdown list");
-		button = new Button("Type");
 
 		ChoiceBox<String> choiceBox = new ChoiceBox<>();
 		choiceBox.getItems().add("A");
@@ -76,20 +75,16 @@ public class JavaFxFour_ extends Application {
 		choiceBox.getItems().add("z");
 		choiceBox.getItems().add(" ");
 
-		button.setOnAction(e -> getChoice(choiceBox));
+		choiceBox.getSelectionModel().selectedItemProperty()
+				.addListener((v, oldValue, newValue) -> System.out.print(newValue));
 
 		VBox layout = new VBox(10);
 
 		layout.setPadding(new Insets(20, 20, 20, 20));
-		layout.getChildren().addAll(button, choiceBox);
+		layout.getChildren().add(choiceBox);
 		scene = new Scene(layout, 300, 250);
 		window.setScene(scene);
 		window.show();
-	}
-
-	private void getChoice(ChoiceBox<String> choiceBox) {
-		String alphabet = choiceBox.getValue();
-		System.out.print(alphabet);
 	}
 
 }

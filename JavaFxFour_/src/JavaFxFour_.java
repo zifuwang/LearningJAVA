@@ -89,7 +89,7 @@ public class JavaFxFour_ extends Application {
 
 	private void getChoice(ChoiceBox<String> choiceBox) {
 		String alphabet = choiceBox.getValue();
-		System.out.println(alphabet);
+		System.out.print(alphabet);
 	}
 
 }

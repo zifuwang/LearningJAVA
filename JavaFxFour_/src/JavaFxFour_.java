@@ -3,7 +3,8 @@ import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.ListView;
+import javafx.scene.control.SelectionMode;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -11,7 +12,7 @@ public class JavaFxFour_ extends Application {
 	Stage window;
 	Scene scene;
 	Button button;
-	ComboBox<String> comboBox;
+	ListView<String> listView;
 
 	public static void main(String[] args) {
 		launch(args);
@@ -20,29 +21,17 @@ public class JavaFxFour_ extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		window = primaryStage;
-		window.setTitle("ComboBox");
+		window.setTitle("ListView");
 		button = new Button("Submit");
-
-		comboBox.setPromptText("What is your name?");
-
-		comboBox.setEditable(true);
-
-		button.setOnAction(e -> printMovie());
-
-		comboBox.setOnAction(e -> System.out.println("User selected" + comboBox.getValue()));
-		comboBox = new ComboBox<>();
-		comboBox.getItems().addAll("Billy", "Bob", "Joe");
+		listView = new ListView<>();
+		listView.getItems().addAll("Red", "Orange", "Yellow", "Green", "Blue", "Indigo", "Purple");
+		listView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 
 		VBox layout = new VBox(10);
-
 		layout.setPadding(new Insets(20, 20, 20, 20));
-		layout.getChildren().addAll(comboBox, button);
+		layout.getChildren().addAll(button);
 		scene = new Scene(layout, 300, 250);
 		window.setScene(scene);
 		window.show();
-	}
-
-	private void printMovie() {
-		System.out.println(comboBox.getValue());
 	}
 }

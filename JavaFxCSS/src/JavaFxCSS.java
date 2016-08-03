@@ -26,6 +26,7 @@ public class JavaFxCSS extends Application {
 
 		Label nameLabel = new Label("UserName:");
 		grid.setConstraints(nameLabel, 0, 0);
+		nameLabel.setId("bold-label");
 
 		TextField nameInput = new TextField("User");
 		grid.setConstraints(nameInput, 1, 0);
@@ -41,6 +42,7 @@ public class JavaFxCSS extends Application {
 		grid.setConstraints(LogInButton, 1, 2);
 
 		Button SignInButton = new Button("Sign in");
+		SignInButton.getStyleClass().add("button-rainbow");
 		grid.setConstraints(SignInButton, 1, 3);
 
 		grid.getChildren().addAll(nameLabel, nameInput, passwordLabel, passwordInput, LogInButton, SignInButton);

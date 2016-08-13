@@ -42,7 +42,8 @@ public class JavaFxFour_ extends Application {
 		grid.getChildren().addAll(nameLabel, nameInput, passwordLabel, passwordInput, LogInButton);
 
 		Scene scene = new Scene(grid, 300, 200);
-
+		scene.getStylesheets().add("file:///C:/Users/gaofj/workspace/zifu/JavaFxCSS/src/viper.css");
+		// scene.getStylesheets().add(getClass().getResource("viper.css").toExternalForm());
 		window.setScene(scene);
 		window.show();
 	}

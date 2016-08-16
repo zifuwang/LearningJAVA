@@ -14,31 +14,51 @@ import org.lwjgl.opengl.GL;
 
 public class LWJGL3_3D {
 
+	static long win = 0;
+
 	public LWJGL3_3D() {
 
 	}
 
-	static public void Main() {
+	public static void createDisplay() {
 		if (!glfwInit()) {
 			System.err.println("FAIL!");
 			System.exit(1);
 		}
 
-		long win = glfwCreateWindow(640, 480, "Window", 0, 0);
+		win = glfwCreateWindow(640, 480, "Window", 0, 0);
 
 		glfwShowWindow(win);
 		GLFW.glfwMakeContextCurrent(win);
 
 		GL.createCapabilities();
+	}
 
-		while (!glfwWindowShouldClose(win)) {
-			if (glfwGetKey(win, GLFW_KEY_ESCAPE) == GL_TRUE) {
-				glfwSetWindowShouldClose(win, true);
-			}
-
-			glfwPollEvents();
+	public static void updateDisplay() {
+		if (glfwGetKey(win, GLFW_KEY_ESCAPE) == GL_TRUE) {
+			glfwSetWindowShouldClose(win, true);
 		}
+		glfwPollEvents();
+	}
+
+	public static void closeDisplay() {
 		glfwTerminate();
+	}
+
+	static Loader loader = new Loader();
+	Renderer_ Renderer = new Renderer_();
+
+	static float[] vertices = { -0.5f, 0.5f, 0f, -0.5f, -0.5f, 0f, 0.5f, -0.5f, 0f,
+
+			0.5f, -0.5f, 0f, 0.5f, 0.5f, 0f - 0.5f, 0.5f, 0f, };
+
+	static public void Main() {
+		Raw_Model model = loader.loadToVao(vertices);
+		createDisplay();
+		while (!glfwWindowShouldClose(win)) {
+			Renderer_.prepare();
+			Renderer_.render(model);
+		}
 	}
 
 	public static void main(String[] args) {

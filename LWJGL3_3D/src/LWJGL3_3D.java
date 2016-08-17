@@ -45,16 +45,16 @@ public class LWJGL3_3D {
 		glfwTerminate();
 	}
 
-	static Loader loader = new Loader();
 	Renderer_ Renderer = new Renderer_();
 
-	static float[] vertices = { -0.5f, 0.5f, 0f, -0.5f, -0.5f, 0f, 0.5f, -0.5f, 0f,
+	static float[] vertices = { -0.5f, 0.5f, 0, -0.5f, -0.5f, 0, 0.5f, -0.5f, 0, 0.5f, 0.5f, 0 };
 
-			0.5f, -0.5f, 0f, 0.5f, 0.5f, 0f - 0.5f, 0.5f, 0f, };
+	static int[] indices = { 0, 1, 3, 3, 1, 2 };
 
 	static public void Main() {
-		Raw_Model model = loader.loadToVao(vertices);
 		createDisplay();
+		Loader loader = new Loader();
+		Raw_Model model = loader.loadToVao(vertices, indices);
 		while (!glfwWindowShouldClose(win)) {
 			Renderer_.prepare();
 			Renderer_.render(model);
